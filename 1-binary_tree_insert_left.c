@@ -31,7 +31,5 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 		left_child->left->parent = left_child;
 
 	parent->left = left_child;
-        /* if (left_child->left) */
-	/* 	printf("child new value = %d\n", left_child->left->n); */
 	return (left_child);
 }
