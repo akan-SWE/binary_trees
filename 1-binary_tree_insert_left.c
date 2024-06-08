@@ -14,17 +14,24 @@
  */
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
+	binary_tree_t *left_child;
 	/* Can't insert left child since it has no parent */
 	if (!parent)
 		return (NULL);
 
-	binary_tree_t *left_child = binary_tree_node(parent, value);
+	left_child = binary_tree_node(parent, value);
 	/* fail to create the left child */
 	if (!left_child)
 		return (NULL);
 
 	/* Assign the left child to the parent */
 	left_child->left = parent->left;
+
+	if (left_child->left)
+		left_child->left->parent = left_child;
+
 	parent->left = left_child;
+        /* if (left_child->left) */
+	/* 	printf("child new value = %d\n", left_child->left->n); */
 	return (left_child);
 }
