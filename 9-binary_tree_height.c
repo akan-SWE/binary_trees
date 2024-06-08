@@ -12,8 +12,12 @@ size_t binary_tree_height_helper(const binary_tree_t *tree);
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t height = binary_tree_height_helper(tree);
+	size_t height;
 
+	if (!tree)
+		return (0);
+
+	height = binary_tree_height_helper(tree);
 	return (height - 1); /* exclude root */
 }
 
