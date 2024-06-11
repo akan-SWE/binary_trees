@@ -20,5 +20,5 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 	right_count = binary_tree_nodes(tree->right);
 
 	/* A node is an inner node if it not a leaf node */
-	return (!binary_tree_is_leaf(tree) + left_count + right_count);
+	return ((tree->left || tree->right) + left_count + right_count);
 }
