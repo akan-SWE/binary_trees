@@ -32,11 +32,12 @@ int binary_tree_balance(const binary_tree_t *tree)
 	size_t height_of_left_subtree, height_of_right_subtree;
 	int balance_factor;
 
+	if (!tree)
+		return (0);
+
 	height_of_left_subtree = get_tree_height(tree->left);
 	height_of_right_subtree = get_tree_height(tree->right);
 
-
 	balance_factor = height_of_left_subtree - height_of_right_subtree;
-
 	return (balance_factor);
 }
